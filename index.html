@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Chat</title>
+    <title>Live Chat with Usernames</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +34,7 @@
             display: flex;
             border-top: 1px solid #ccc;
         }
-        .chat-input input {
+        .chat-input input[type="text"], .chat-input input[type="username"] {
             flex: 1;
             padding: 10px;
             border: none;
@@ -52,10 +52,13 @@
 <body>
     <div class="chat-container">
         <div class="chat-header">
-            Live Chat
+            Live Chat with Usernames
         </div>
         <div class="chat-messages" id="chat-messages">
             <!-- Messages will appear here -->
+        </div>
+        <div class="chat-input">
+            <input type="username" id="chat-username" placeholder="Enter your username...">
         </div>
         <div class="chat-input">
             <input type="text" id="chat-input" placeholder="Type a message...">
@@ -67,15 +70,18 @@
         function sendMessage() {
             const input = document.getElementById('chat-input');
             const messages = document.getElementById('chat-messages');
+            const username = document.getElementById('chat-username').value;
             const message = input.value;
 
-            if (message.trim() !== '') {
+            if (username.trim() !== '' && message.trim() !== '') {
                 const messageElement = document.createElement('div');
-                messageElement.textContent = message;
+                messageElement.innerHTML = `<strong>${username}:</strong> ${message}`;
                 messages.appendChild(messageElement);
                 input.value = '';
+            } else {
+                alert("Please enter a username and a message.");
             }
         }
     </script>
 </body>
-  </html>
+</html>
