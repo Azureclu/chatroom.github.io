@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey:your-auth-domain",
+    apiKey: "epic-a727f.firebaseapp.com",
     databaseURL: "your-database-url",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-messaging-sender-id",
-    appId: "your-app-id"
+    projectId: "epic-a727f",
+    storageBucket: "epic-a727f.firebasestorage.app",
+    messagingSenderId: "506761814699",
+    appId: "1:506761814699:web:18246ad3aa08c9b3df0dee"
 };
 
 firebase.initializeApp(firebaseConfig);
